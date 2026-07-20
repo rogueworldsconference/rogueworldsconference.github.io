@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue Worlds 3 — Center for Astrophysics | Cambridge, MA</title>
+    <style>
+        /* Modern CSS Reset & Variable Styling */
+        :root {
+            --bg-color: #0b0d19;
+            --card-bg: #13172d;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-color: #f59e0b; /* Warm gold */
+            --accent-hover: #d97706;
+            --primary-blue: #3b82f6;
+            --nav-bg: rgba(11, 13, 25, 0.9);
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero Section */
+        header {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(11, 13, 25, 1) 100%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            padding: 80px 0 40px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .conference-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ffffff, #93c5fd, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .meta-item {
+            background-color: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #0b0d19;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            color: #0b0d19;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-muted);
+        }
+
+        .btn-disabled {
+            background-color: #1e293b;
+            color: #64748b;
+            border: 1px solid #334155;
+            cursor: not-allowed;
+        }
+
+        .btn-disabled:hover {
+            color: #64748b;
+        }
+
+        /* Navigation menu */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;        /* Allows links to drop to a second line when needed */
+    padding: 10px 0;        /* Gives a little extra breathing room vertically */
+}
+.nav-links a {
+    display: block;
+    padding: 5px 10px;     /* Slightly tighter padding for a cleaner multi-line stack */
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+        .nav-links a:hover {
+            color: var(--text-color);
+        }
+
+        /* Sections structure */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        /* Grid Layouts for Info Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Table styling for Schedule / Dates */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Responsive Map Wrapper */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 40%; /* Aspect ratio of map */
+            min-height: 300px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 25px;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #080a12;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .conference-title {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .meta-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            .map-container {
+                padding-top: 60%;
+            }
+        }
+        
+        /* Agenda Section & Tabs */
+.agenda-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    overflow-x: auto;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: var(--text-color);
+    border-color: var(--text-muted);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-color);
+    color: #0b0d19;
+    border-color: var(--accent-color);
+}
+
+/* Agenda Content Blocks */
+.agenda-day {
+    display: none; /* Hidden by default, toggled with JS */
+}
+
+.agenda-day.active {
+    display: block;
+}
+
+.agenda-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.agenda-item:last-child {
+    border-bottom: none;
+}
+
+.agenda-time {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1rem;
+    padding-top: 2px;
+}
+
+/* Session and Talk styling */
+.session-header {
+    margin-bottom: 15px;
+}
+
+.session-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.session-chair {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Non-talk events (Coffee, Lunch, Reception) */
+.event-break {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    padding: 15px 20px;
+}
+
+.talk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.talk-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--primary-blue);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+}
+
+.talk-title {
+    font-weight: 600;
+    color: #f8fafc;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.talk-speaker {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.talk-speaker strong {
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .agenda-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .agenda-time {
+        font-size: 0.9rem;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        padding-bottom: 4px;
+    }
+}
+/* Past Workshops Section */
+.past-workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.workshop-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.workshop-card h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.workshop-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.video-link:hover {
+    color: var(--accent-hover);
+}
+
+.video-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+    </style>
+<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
+<body>
+
+    <!-- ===================== PASSWORD GATE ===================== -->
+    <style>
+        #pw-gate-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #0b0d19;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        #pw-gate-box {
+            background: #13172d;
+            border: 1px solid #1e293b;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        #pw-gate-box h2 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        #pw-gate-box p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        #pw-gate-input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background: #0b0d19;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 14px;
+            box-sizing: border-box;
+        }
+        #pw-gate-btn {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: none;
+            background: #f59e0b;
+            color: #0b0d19;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #pw-gate-btn:hover { background: #d97706; }
+        #pw-gate-error {
+            color: #f87171;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            min-height: 1.2em;
+        }
+        #site-content { display: none; }
+    </style>
+
+    <div id="pw-gate-overlay">
+        <div id="pw-gate-box">
+            <h2>Rogue Worlds 3</h2>
+            <p>This page is password protected. Please enter the password to continue.</p>
+            <input type="password" id="pw-gate-input" placeholder="Password" autofocus="">
+            <button id="pw-gate-btn">Enter</button>
+            <div id="pw-gate-error"></div>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        // SHA-256 hash of the site password. Default password is: rogueworlds3
+        // To change the password: open a browser console anywhere and run
+        //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourNewPassword'))
+        //     .then(buf => console.log(Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('')))
+        // then paste the resulting hex string below.
+        var PASSWORD_HASH = "61cad713fd155f3d3b87de2264a36bb28e8eab7bc84c0b08adf8bdb55424f836";
+
+        async function sha256Hex(message) {
+            var data = new TextEncoder().encode(message);
+            var hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer)).map(function (b) {
+                return b.toString(16).padStart(2, '0');
+            }).join('');
+        }
+
+        function unlock() {
+            document.getElementById('pw-gate-overlay').style.display = 'none';
+            document.getElementById('site-content').style.display = 'block';
+        }
+
+        // Stay unlocked for the rest of this browser tab session
+        if (sessionStorage.getItem('rw3-unlocked') === 'true') {
+            unlock();
+        }
+
+        document.getElementById('pw-gate-btn').addEventListener('click', tryUnlock);
+        document.getElementById('pw-gate-input').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') tryUnlock();
+        });
+
+        function tryUnlock() {
+            var input = document.getElementById('pw-gate-input').value;
+            sha256Hex(input).then(function (hash) {
+                if (hash === PASSWORD_HASH) {
+                    sessionStorage.setItem('rw3-unlocked', 'true');
+                    unlock();
+                } else {
+                    document.getElementById('pw-gate-error').textContent = 'Incorrect password. Please try again.';
+                    document.getElementById('pw-gate-input').value = '';
+                }
+            });
+        }
+    })();
+    </script>
+    <!-- =================== END PASSWORD GATE =================== -->
+
+    <div id="site-content">
+
+    <header>
+        <div class="container">
+            <h1 class="conference-title">Rogue Worlds 3</h1>
+            <p class="subtitle">Characterizing and understanding free-floating planetary-mass objects</p>
+            
+            <div class="meta-info">
+                <div class="meta-item"><strong>Dates:</strong> December 14 – 17, 2026</div>
+                <div class="meta-item"><strong>Location:</strong> <a href="https://www.google.com/maps/place/Phillips+Auditorium/@42.3817071,-71.1288978,154m/data=!3m1!1e3!4m12!1m5!3m4!2zNDLCsDIyJzU0LjMiTiA3McKwMDcnNDMuMSJX!8m2!3d42.38175!4d-71.1286389!3m5!1s0x89e3776cecebc381:0xf5110facf9a8160b!8m2!3d42.3817048!4d-71.128537!16s%2Fg%2F12qflcdcj?entry=ttu&amp;g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D">Phillips Auditorium, Center for Astrophysics | Harvard &amp; Smithsonian, Cambridge, MA, USA</a></div>
+            </div>
+
+            <div class="cta-group">
+                <a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#" class="btn btn-disabled">Registration (TBD)</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaJsy4wJ3RSj7ohWQ1jDAZktR8bLDMMk8cy2u5ona4etmENA/viewform?usp=publish-editor" class="btn btn-secondary">Abstract Submission</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#rationale">Scientific Rationale</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#dates">Important Dates</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#speakers">Speakers</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#agenda">Agenda</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#committees">Committees</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#venue">Venue &amp; Travel</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#past-workshops">Past Workshops</a></li>
+                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#coc">Code of Conduct</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="rationale">
+        <div class="container">
+            <h2>Scientific Rationale</h2>
+            <p>Free-floating, or "rogue", planetary-mass objects have been discovered wandering through the Galaxy unbound to any star. The origins of these objects remain poorly understood, and likely involve a combination of many different processes relevant to star and planet formation.</p>
+            
+            <p>Direct imaging surveys of young star-forming regions continue to find hundreds of high-mass rogue planets, though it remains an ongoing theoretical challenge to determine what fraction represent ejected planets as opposed to aborted stellar embryos. Meanwhile, upcoming space-based microlensing programs, such as the Nancy Grace Roman Space Telescope, are poised to vastly increase our sample of free-floating planets at masses extending to Earth-mass and below, opening a new window into their origin and demographics.</p>
+            
+            <p>Following the success of previous workshops, <strong>Rogue Worlds 3</strong> is a 4-day workshop designed to bring together researchers at the forefront of different aspects of the study of free-floating planets. Key focal areas include:</p>
+            
+            <ul>
+                <li style="margin-left: 20px; margin-bottom: 10px;"><strong>Microlensing:</strong> Ground- and space-based detections, demographics, and mass functions.</li>
+                <li style="margin-left: 20px; margin-bottom: 10px;"><strong>Direct Imaging:</strong> Observational breakthroughs, characterization of young planetary-mass objects, and atmospheric modeling.</li>
+                <li style="margin-left: 20px; margin-bottom: 10px;"><strong>Dynamics:</strong> Modeling planetary ejection mechanisms, stellar cluster dynamics, and the fate of outer planetary systems.</li>
+                <li style="margin-left: 20px; margin-bottom: 10px;"><strong>Moons Orbiting Rogue Worlds:</strong> Theoretical constraints, formation mechanics, and potential detection channels for exomoons bound to free-floating hosts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="dates" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <h2>Important Dates</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Milestone</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Abstract Submission Opens</strong></td>
+                            <td>TBD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registration Opens</strong></td>
+                            <td>TBD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Abstract Submission Deadline</strong></td>
+                            <td>TBD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Registration Deadline</strong></td>
+                            <td>TBD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workshop Dates</strong></td>
+                            <td>December 14 – 17, 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <div class="container">
+            <h2>Invited Speakers</h2>
+            <p>To be announced. </p>
+        </div>
+    </section>
+    
+    <section id="agenda">
+    <div class="container">
+        <h2>Workshop Agenda</h2>
+        <p>The detailed schedule for Rogue Worlds 3. Click the tabs below to view each day's sessions.</p>
+
+        <!-- Day Toggles -->
+        <div class="agenda-tabs">
+            <button class="tab-btn active" onclick="switchDay(event, 'day1')">Day 1: Mon Dec 14</button>
+            <button class="tab-btn" onclick="switchDay(event, 'day2')">Day 2: Tue Dec 15</button>
+        </div>
+
+        <!-- DAY 1 CONTENT -->
+        <div id="day1" class="agenda-day active">
+            
+            <!-- Item 1: Registration/Morning Coffee -->
+            <div class="agenda-item event-break">
+                <div class="agenda-time">08:30 – 09:15</div>
+                <div>
+                    <h4 class="session-title">Registration &amp; Morning Coffee</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">09:15 – 10:30</div>
+                <div>
+                    <div class="session-header">
+                        <div class="session-title">Session I: Demographics &amp; Microlensing Detections</div>
+                        <div class="session-chair">Chair: Andrew Vanderburg (MIT)</div>
+                    </div>
+                    
+                    <div class="talk-list">
+                        <!-- Talk 1 -->
+                        <div class="talk-card">
+                            <div class="talk-title">An Earth-Mass Free-Floating Planet Candidate from Prime-Focus Imaging</div>
+                            <div class="talk-speaker">Presented by <strong>Jane Doe</strong> (University of Tokyo)</div>
+                        </div>
+                        <!-- Talk 2 -->
+                        <div class="talk-card">
+                            <div class="talk-title">Shedding Light on Rogue Planets with Joint Ground-Space Microlensing Campaigns</div>
+                            <div class="talk-speaker">Presented by <strong>John Smith</strong> (UCSC)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item event-break">
+                <div class="agenda-time">10:30 – 11:00</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DAY 2 CONTENT -->
+        <div id="day2" class="agenda-day">
+            
+            <!-- Item 1: Morning Session -->
+            <div class="agenda-item">
+                <div class="agenda-time">09:00 – 10:30</div>
+                <div>
+                    <div class="session-header">
+                        <div class="session-title">Session II: Direct Imaging &amp; Atmospheres</div>
+                        <div class="session-chair">Chair: Jackie Faherty (AMNH)</div>
+                    </div>
+                    
+                    <div class="talk-list">
+                        <div class="talk-card">
+                            <div class="talk-title">JWST/NIRCam Characterization of Young Planetary-Mass Objects</div>
+                            <div class="talk-speaker">Presented by <strong>Alice Johnson</strong> (Space Telescope Science Institute)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <section id="committees" style="background-color: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <h2>Organizing Committees</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Scientific Organizing Committee (SOC)</h3>
+                    <ul>
+                        <li><strong>William DeRocco</strong> (Chair) </li>
+                        <li><strong>Andrew Vanderburg</strong> (Co-Chair)</li>
+                        <li><strong>Hervé Bouy</strong></li>
+<li><strong>Matthew De Furio</strong></li>
+<li><strong>Jackie Faherty</strong></li>
+<li><strong>Sean Raymond</strong></li>
+<li><strong>Malena Rice</strong></li>
+<li><strong>Takahiro Sumi</strong></li>
+<li><strong>Sean K Terry</strong></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Local Organizing Committee (LOC)</h3>
+                    <ul>
+                        <li><strong>Andrew Vanderburg</strong> (Chair) </li>
+                        <li><strong>Zoe de Beurs</strong> </li>
+                        <li><strong>Yadira Gaibor</strong> </li>
+                        <li><strong>Sydney Jenkins</strong> </li>
+                        <li><strong>Isabella Macias</strong></li>
+                        <li><strong>William DeRocco</strong> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="venue">
+        <div class="container">
+            <h2>Venue &amp; Logistics</h2>
+            <p>The conference will take place in the <strong>Phillips Auditorium</strong> at the Center for Astrophysics | Harvard &amp; Smithsonian in Cambridge, Massachusetts.</p>
+            
+            <div class="sequential-container">
+                
+                <div class="card">
+                    <h3>The Venue</h3>
+                    <p><strong>Phillips Auditorium</strong><br>Center for Astrophysics<br>60 Garden Street<br>Cambridge, MA 02138</p>
+                    <p style="margin-top: 15px;">Phillips Auditorium is located in Building D of the historic 60 Garden Street observatory complex.</p>
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b>Travel</b>: Cambridge, MA is conveniently connected to the major transportation infrastructure in Boston, MA.</em></p>
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em> <b>Airport</b>: Boston Logan International Airport is a 20 minute taxi/rideshare to the Center for Astrophysics, or take the free bus to South Station, and then connect to the Red Line (towards Alewife) and exit at Harvard Square.</em></p>
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b> Train</b>: South Station is also a major hub for train travel with convenient routes along the Eastern Seaboard of the USA through Amtrak. </em></p>
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b>Transit</b>: The Center for Astrophysics is accessible via a 15-minute walk from the Harvard Square MBTA station (Red Line). Frequent local bus routes (MBTA 74, 75, and 78) also connect Harvard Square Station with the Center for Astrophysics (take the stop at Concord Ave opppsote Buckingham St).</em></p>
+
+                </div>
+                
+                <div class="map-container">
+                
+                <iframe src="./Rogue Worlds 3 — Center for Astrophysics _ Cambridge, MA_files/embed.html" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <br>
+                
+                <div class="card">
+                    <h3>Recommended Accommodations</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Below is a curated selection of local hotels and their proximity to the Center for Astrophysics (CfA).</p>
+                    <ul>
+                        <li>
+                            <strong>Sheraton Commander Hotel</strong><br>
+                            <span class="hotel-meta">16 Garden St, Cambridge, MA 02138 | 617-547-4800</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">A 0.3-mile, 5-minute walk straight down Garden Street to the CfA driveway.</span>
+                        </li>
+                        <li>
+                            <strong>The Porter Square Hotel</strong><br>
+                            <span class="hotel-meta">1924 Massachusetts Ave, Cambridge, MA 02140 | 617-499-3399</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Located 1.1 miles away. A 20-to-25-minute walk southwest down Massachusetts Avenue and up Linnean Street, or a 5-minute ride-share. Alternatively, catch the MBTA Red Line subway from Porter Square station to Harvard Square (1 stop) followed by a 15-minute walk.</span>
+                        </li>
+                        <li>
+                            <strong>Hotel 1868</strong><br>
+                            <span class="hotel-meta">1868 Massachusetts Ave, Cambridge, MA 02140 | 617-499-2998</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Located 0.9 miles away in Porter Square. A 15-to-18-minute walk down Massachusetts Avenue and up Linnean Street to the CfA, or a 4-minute ride-share. Alternatively, take the MBTA Red Line subway from Porter Square station to Harvard Square (1 stop) followed by either the MBTA 74, 75, or 78 bus.</span>
+                        </li>
+                        <li>
+                            <strong>Freepoint Hotel Cambridge</strong><br>
+                            <span class="hotel-meta">220 Alewife Brook Pkwy, Cambridge, MA 02138 | 617-491-8000</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">A 1.3-mile (25-minute) walk, or a 5-minute ride-share. Also accessible via the MBTA 74 or 78 bus routes which drop off directly at Garden Street.</span><br>
+                        </li>
+                        <li>
+                            <strong>DoubleTree Suites by Hilton (Boston-Cambridge)</strong><br>
+                            <span class="hotel-meta">400 Soldiers Field Rd, Boston, MA 02134 | 617-783-0090</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">A 2.2-mile distance. Features a complimentary hotel shuttle offering direct drop-offs and pick-ups at Harvard Square, which is a 15-minute walk to the CfA or take the MBTA 74, 75, or 78 bus.</span><br>
+                        </li>
+                        <li>
+                            <strong>The Charles Hotel</strong><br>
+                            <span class="hotel-meta">One Bennett St, Cambridge, MA 02138 | 617-864-1200</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">A 0.8-mile (15-minute) walk via Garden Street or Mason Street directly to the CfA. Alternatively, take an MBTA 74, 75, or 78 bus from Harvard Square Station, all of which stop directly in front of the CfA. </span>
+                        </li>
+                        <li>
+                            <strong>Harvard Square Hotel</strong><br>
+                            <span class="hotel-meta">110 Mount Auburn St, Cambridge, MA 02138 | 617-864-5200</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">A 0.8-mile (15-minute) walk along Garden Street. Located immediately adjacent to the Harvard Square Red Line subway station. Alternatively, take an MBTA 74, 75, or 78 bus from Harvard Square Station, all of which stop directly in front of the CfA.</span>
+                        </li>
+                        <li>
+                            <strong>Boston Marriott Cambridge</strong><br>
+                            <span class="hotel-meta">50 Broadway, Cambridge, MA 02142 | 617-494-6600</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Located 2.2 miles away. Best transit option is taking the MBTA Red Line subway from Kendall/MIT station to Harvard Square (2 stops), followed by a 15-minute walk to the CfA or the MBTA 74, 75, or 78 bus.</span>
+                        </li>
+                        <li>
+                            <strong>Residence Inn by Marriott Boston Cambridge</strong><br>
+                            <span class="hotel-meta">120 Broadway, Cambridge, MA 02142 | 617-349-0700</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Located 2.1 miles away in Kendall Square. Easily traveled by taking the MBTA Red Line subway to Harvard Square (2 stops), then walking 15 minutes to the CfA or taking the MBTA 74, 75, or 78 bus.</span>
+                        </li>
+                        <li>
+                            <strong>Hyatt Regency Boston / Cambridge</strong><br>
+                            <span class="hotel-meta">575 Memorial Dr, Cambridge, MA 02139 | 617-492-1234</span><br>
+                            <span style="font-size: 0.85rem; color: #cbd5e1;">Located 1.8 miles away. Travel is a 35-minute walk or a brief 8-minute ride-share to the CfA.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </section>
+
+<!-- Past Workshops Section -->
+<section id="past-workshops" style="background-color: rgba(255, 255, 255, 0.01);">
+    <div class="container">
+        <h2>Past Workshops</h2>
+        <p>Catch up on recorded presentations, discussions, and slide materials from previous iterations of the workshop.</p>
+        
+        <div class="past-workshops-grid">
+            
+            <!-- Rogue Worlds 1 -->
+            <div class="workshop-card">
+                <div>
+                    <h3>Rogue Worlds 1 (2024)</h3>
+                    <p> Dec. 11-14, Osaka University Nakanoshima Center, Osaka, Japan</p>
+
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLjHoTS6a4gjkPCRSnzzIK6h4qlUGZHdqX" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <!-- Simple inline SVG play icon -->
+                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    Watch 2024 Playlist
+                </a>
+            </div>
+
+            <!-- Rogue Worlds 2 -->
+            <div class="workshop-card">
+                <div>
+                    <h3>Rogue Worlds 2 (2025)</h3>
+                    <p> December 15-17, 2025, IAP, Sorbonne University / CNRS, Paris </p>
+
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLS6OdIuyEtADuDbgejXiZ6WXGPECbvi5k" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    Watch 2025 Playlist
+                </a>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Code of Conduct Section -->
+<section id="coc">
+    <div class="container">
+        <h2>Code of Conduct</h2>
+        <p>The conference organizers are committed to making this meeting productive and enjoyable for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, nationality, or religion. Harassment of participants in any form will not be tolerated.</p>
+        
+        <div class="card" style="background-color: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--accent-color);">
+            <p style="font-weight: 600; color: #fff; margin-bottom: 15px;">To participate at the Rogue Worlds 3 Conference, please follow these guidelines:</p>
+            
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                    <strong>Professional Behavior:</strong> Harassment and sexist, racist, or exclusionary comments or jokes are not appropriate. Harassment includes sustained disruption of talks or other events, inappropriate physical contact, sexual attention or innuendo, deliberate intimidation, stalking, and photography or recording of an individual without consent. It also includes offensive comments related to gender, sexual orientation, disability, physical appearance, body size, race, or religion.
+                </li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                    <strong>Audience Awareness:</strong> All communication should be appropriate for a professional audience including people of many different backgrounds. Sexual language and imagery is not appropriate.
+                </li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                    <strong>Respectful Critique:</strong> Be respectful and do not insult or put down other attendees or facilitators of the event. Critique ideas, not people.
+                </li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                    <strong>Social Media &amp; Sharing:</strong> If participants wish to share photos or contents of talks/slides of any attendee or speaker on social media, we ask that they first get permission.
+                </li>
+                <li style="margin-bottom: 0; padding-bottom: 0;">
+                    <strong>Enforcement:</strong> Participants asked to stop any inappropriate behavior are expected to comply immediately. Attendees violating these rules may be asked to leave the event at the sole discretion of the organizers without a refund of any charge.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Attributions block -->
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 25px; line-height: 1.5;">
+            This code of conduct is based on the "London Code of Conduct," as originally designed for the conference "Accurate Astrophysics. Correct Cosmology," held in London in July 2015. The London Code of Conduct was adapted with permission by Andrew Pontzen and Hiranya Peiris from a document by Software Carpentry, which itself derives from original Creative Commons documents by PyCon and Geek Feminism. It is released under a CC-Zero license for reuse. To track improvements and best practice, please retain this acknowledgment, and log your re-use or modification of this policy at <a href="https://github.com/apontzen/london_cc" target="_blank" rel="noopener noreferrer">github.com/apontzen/london_cc</a>.
+        </p>
+    </div>
+</section>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Rogue Worlds 3. All rights reserved.</p>
+            <p>Contact: <a href="mailto:example@cfa.harvard.edu">TBD Contact Email</a></p>
+        </div>
+    </footer>
+
+    <script>
+    function switchDay(event, dayId) {
+        // Hide all days
+        const days = document.querySelectorAll('.agenda-day');
+        days.forEach(day => day.classList.remove('active'));
+
+        // Deactivate all tab buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Show the chosen day and highlight its button
+        document.getElementById(dayId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+    </div><!-- /#site-content -->
+
+</body></html>
