@@ -571,12 +571,12 @@
 
     <script>
     (function () {
-        // SHA-256 hash of the site password. Default password is: rogueworlds3
+        // SHA-256 hash of the site password. 
         // To change the password: open a browser console anywhere and run
         //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourNewPassword'))
         //     .then(buf => console.log(Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('')))
         // then paste the resulting hex string below.
-        var PASSWORD_HASH = "61cad713fd155f3d3b87de2264a36bb28e8eab7bc84c0b08adf8bdb55424f836";
+        var PASSWORD_HASH = "ad7adf23fc04945ad4b1b9709aa1574f8d27d585478ed5e38498ab4b146a2199";
 
         async function sha256Hex(message) {
             var data = new TextEncoder().encode(message);
