@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0077)https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rogue Worlds 3 — Center for Astrophysics | Cambridge, MA</title>
     <style>
@@ -492,132 +492,8 @@
 }
 
     </style>
-<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
+</head>
 <body>
-
-    <!-- ===================== PASSWORD GATE ===================== -->
-    <style>
-        #pw-gate-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: #0b0d19;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        #pw-gate-box {
-            background: #13172d;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 40px;
-            max-width: 380px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        #pw-gate-box h2 {
-            color: #fff;
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-        #pw-gate-box p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        #pw-gate-input {
-            width: 100%;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border: 1px solid #334155;
-            background: #0b0d19;
-            color: #e2e8f0;
-            font-size: 1rem;
-            margin-bottom: 14px;
-            box-sizing: border-box;
-        }
-        #pw-gate-btn {
-            width: 100%;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border: none;
-            background: #f59e0b;
-            color: #0b0d19;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        #pw-gate-btn:hover { background: #d97706; }
-        #pw-gate-error {
-            color: #f87171;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            min-height: 1.2em;
-        }
-        #site-content { display: none; }
-    </style>
-
-    <div id="pw-gate-overlay">
-        <div id="pw-gate-box">
-            <h2>Rogue Worlds 3</h2>
-            <p>This page is password protected. Please enter the password to continue.</p>
-            <input type="password" id="pw-gate-input" placeholder="Password" autofocus="">
-            <button id="pw-gate-btn">Enter</button>
-            <div id="pw-gate-error"></div>
-        </div>
-    </div>
-
-    <script>
-    (function () {
-        // SHA-256 hash of the site password. Default password is: rogueworlds3
-        // To change the password: open a browser console anywhere and run
-        //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('yourNewPassword'))
-        //     .then(buf => console.log(Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('')))
-        // then paste the resulting hex string below.
-        var PASSWORD_HASH = "61cad713fd155f3d3b87de2264a36bb28e8eab7bc84c0b08adf8bdb55424f836";
-
-        async function sha256Hex(message) {
-            var data = new TextEncoder().encode(message);
-            var hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            return Array.from(new Uint8Array(hashBuffer)).map(function (b) {
-                return b.toString(16).padStart(2, '0');
-            }).join('');
-        }
-
-        function unlock() {
-            document.getElementById('pw-gate-overlay').style.display = 'none';
-            document.getElementById('site-content').style.display = 'block';
-        }
-
-        // Stay unlocked for the rest of this browser tab session
-        if (sessionStorage.getItem('rw3-unlocked') === 'true') {
-            unlock();
-        }
-
-        document.getElementById('pw-gate-btn').addEventListener('click', tryUnlock);
-        document.getElementById('pw-gate-input').addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') tryUnlock();
-        });
-
-        function tryUnlock() {
-            var input = document.getElementById('pw-gate-input').value;
-            sha256Hex(input).then(function (hash) {
-                if (hash === PASSWORD_HASH) {
-                    sessionStorage.setItem('rw3-unlocked', 'true');
-                    unlock();
-                } else {
-                    document.getElementById('pw-gate-error').textContent = 'Incorrect password. Please try again.';
-                    document.getElementById('pw-gate-input').value = '';
-                }
-            });
-        }
-    })();
-    </script>
-    <!-- =================== END PASSWORD GATE =================== -->
-
-    <div id="site-content">
 
     <header>
         <div class="container">
@@ -626,11 +502,11 @@
             
             <div class="meta-info">
                 <div class="meta-item"><strong>Dates:</strong> December 14 – 17, 2026</div>
-                <div class="meta-item"><strong>Location:</strong> <a href="https://www.google.com/maps/place/Phillips+Auditorium/@42.3817071,-71.1288978,154m/data=!3m1!1e3!4m12!1m5!3m4!2zNDLCsDIyJzU0LjMiTiA3McKwMDcnNDMuMSJX!8m2!3d42.38175!4d-71.1286389!3m5!1s0x89e3776cecebc381:0xf5110facf9a8160b!8m2!3d42.3817048!4d-71.128537!16s%2Fg%2F12qflcdcj?entry=ttu&amp;g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D">Phillips Auditorium, Center for Astrophysics | Harvard &amp; Smithsonian, Cambridge, MA, USA</a></div>
+                <div class="meta-item"><strong>Location:</strong> <a href='https://www.google.com/maps/place/Phillips+Auditorium/@42.3817071,-71.1288978,154m/data=!3m1!1e3!4m12!1m5!3m4!2zNDLCsDIyJzU0LjMiTiA3McKwMDcnNDMuMSJX!8m2!3d42.38175!4d-71.1286389!3m5!1s0x89e3776cecebc381:0xf5110facf9a8160b!8m2!3d42.3817048!4d-71.128537!16s%2Fg%2F12qflcdcj?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D'>Phillips Auditorium, Center for Astrophysics | Harvard & Smithsonian, Cambridge, MA, USA</a></div>
             </div>
 
             <div class="cta-group">
-                <a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#" class="btn btn-disabled">Registration (TBD)</a>
+                <a href="#" class="btn btn-disabled">Registration (TBD)</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaJsy4wJ3RSj7ohWQ1jDAZktR8bLDMMk8cy2u5ona4etmENA/viewform?usp=publish-editor" class="btn btn-secondary">Abstract Submission</a>
             </div>
         </div>
@@ -639,14 +515,14 @@
     <nav>
         <div class="container">
             <ul class="nav-links">
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#rationale">Scientific Rationale</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#dates">Important Dates</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#speakers">Speakers</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#agenda">Agenda</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#committees">Committees</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#venue">Venue &amp; Travel</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#past-workshops">Past Workshops</a></li>
-                <li><a href="https://lweb.cfa.harvard.edu/~avanderb/vetting/rogueworlds3/rogueworlds3.html#coc">Code of Conduct</a></li>
+                <li><a href="#rationale">Scientific Rationale</a></li>
+                <li><a href="#dates">Important Dates</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#committees">Committees</a></li>
+                <li><a href="#venue">Venue & Travel</a></li>
+                <li><a href="#past-workshops">Past Workshops</a></li>
+                <li><a href="#coc">Code of Conduct</a></li>
             </ul>
         </div>
     </nav>
@@ -732,7 +608,7 @@
             <div class="agenda-item event-break">
                 <div class="agenda-time">08:30 – 09:15</div>
                 <div>
-                    <h4 class="session-title">Registration &amp; Morning Coffee</h4>
+                    <h4 class="session-title">Registration & Morning Coffee</h4>
                     <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
                 </div>
             </div>
@@ -742,7 +618,7 @@
                 <div class="agenda-time">09:15 – 10:30</div>
                 <div>
                     <div class="session-header">
-                        <div class="session-title">Session I: Demographics &amp; Microlensing Detections</div>
+                        <div class="session-title">Session I: Demographics & Microlensing Detections</div>
                         <div class="session-chair">Chair: Andrew Vanderburg (MIT)</div>
                     </div>
                     
@@ -779,7 +655,7 @@
                 <div class="agenda-time">09:00 – 10:30</div>
                 <div>
                     <div class="session-header">
-                        <div class="session-title">Session II: Direct Imaging &amp; Atmospheres</div>
+                        <div class="session-title">Session II: Direct Imaging & Atmospheres</div>
                         <div class="session-chair">Chair: Jackie Faherty (AMNH)</div>
                     </div>
                     
@@ -832,8 +708,8 @@
     
     <section id="venue">
         <div class="container">
-            <h2>Venue &amp; Logistics</h2>
-            <p>The conference will take place in the <strong>Phillips Auditorium</strong> at the Center for Astrophysics | Harvard &amp; Smithsonian in Cambridge, Massachusetts.</p>
+            <h2>Venue & Logistics</h2>
+            <p>The conference will take place in the <strong>Phillips Auditorium</strong> at the Center for Astrophysics | Harvard & Smithsonian in Cambridge, Massachusetts.</p>
             
             <div class="sequential-container">
                 
@@ -842,9 +718,9 @@
                     <p><strong>Phillips Auditorium</strong><br>Center for Astrophysics<br>60 Garden Street<br>Cambridge, MA 02138</p>
                     <p style="margin-top: 15px;">Phillips Auditorium is located in Building D of the historic 60 Garden Street observatory complex.</p>
                     
-                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b>Travel</b>: Cambridge, MA is conveniently connected to the major transportation infrastructure in Boston, MA.</em></p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b>Travel</b>: Cambridge, MA is conveniently connected to the major transportation infrastructure in Boston, MA.</p> 
                     
-                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em> <b>Airport</b>: Boston Logan International Airport is a 20 minute taxi/rideshare to the Center for Astrophysics, or take the free bus to South Station, and then connect to the Red Line (towards Alewife) and exit at Harvard Square.</em></p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em> <b>Airport</b>: Boston Logan International Airport is a 20 minute taxi/rideshare to the Center for Astrophysics, or take the free bus to South Station, and then connect to the Red Line (towards Alewife) and exit at Harvard Square.</p>
                     
                     <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);"><em><b> Train</b>: South Station is also a major hub for train travel with convenient routes along the Eastern Seaboard of the USA through Amtrak. </em></p>
                     
@@ -854,7 +730,8 @@
                 
                 <div class="map-container">
                 
-                <iframe src="./files/embed.html" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d669.6344835081226!2d-71.12924613038732!3d42.38175459819941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDIyJzU0LjMiTiA3McKwMDcnNDMuMCJX!5e1!3m2!1sen!2sus!4v1784219273601!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            </
+                </iframe>
             </div>
             <br>
                 
@@ -938,7 +815,7 @@
                 </div>
                 <a href="https://www.youtube.com/playlist?list=PLjHoTS6a4gjkPCRSnzzIK6h4qlUGZHdqX" target="_blank" rel="noopener noreferrer" class="video-link">
                     <!-- Simple inline SVG play icon -->
-                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     Watch 2024 Playlist
                 </a>
             </div>
@@ -951,7 +828,7 @@
 
                 </div>
                 <a href="https://www.youtube.com/playlist?list=PLS6OdIuyEtADuDbgejXiZ6WXGPECbvi5k" target="_blank" rel="noopener noreferrer" class="video-link">
-                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    <svg class="video-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     Watch 2025 Playlist
                 </a>
             </div>
@@ -979,7 +856,7 @@
                     <strong>Respectful Critique:</strong> Be respectful and do not insult or put down other attendees or facilitators of the event. Critique ideas, not people.
                 </li>
                 <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
-                    <strong>Social Media &amp; Sharing:</strong> If participants wish to share photos or contents of talks/slides of any attendee or speaker on social media, we ask that they first get permission.
+                    <strong>Social Media & Sharing:</strong> If participants wish to share photos or contents of talks/slides of any attendee or speaker on social media, we ask that they first get permission.
                 </li>
                 <li style="margin-bottom: 0; padding-bottom: 0;">
                     <strong>Enforcement:</strong> Participants asked to stop any inappropriate behavior are expected to comply immediately. Attendees violating these rules may be asked to leave the event at the sole discretion of the organizers without a refund of any charge.
@@ -997,7 +874,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Rogue Worlds 3. All rights reserved.</p>
+            <p>&copy; 2026 Rogue Worlds 3. All rights reserved.</p>
             <p>Contact: <a href="mailto:example@cfa.harvard.edu">TBD Contact Email</a></p>
         </div>
     </footer>
@@ -1017,7 +894,6 @@
         event.currentTarget.classList.add('active');
     }
 </script>
-
-    </div><!-- /#site-content -->
-
-</body></html>
+    
+</body>
+</html>
