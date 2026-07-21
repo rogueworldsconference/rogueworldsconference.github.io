@@ -390,10 +390,16 @@
 }
 
 /* Non-talk events (Coffee, Lunch, Reception) */
-.event-break {
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 6px;
-    padding: 15px 20px;
+.coffee-break {
+    color: #E69597
+}
+
+.lunch-break {
+    color: #A4CCFB
+}
+
+.social-event{
+    color: #84C489
 }
 
 .talk-list {
@@ -674,12 +680,6 @@
             <h2>Important Dates</h2>
             <div class="table-container">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Milestone</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
                             <td><strong>Abstract Submission Opens</strong></td>
@@ -724,15 +724,15 @@
             <button class="tab-btn active" onclick="switchDay(event, 'day1')">Day 1: Mon Dec 14</button>
             <button class="tab-btn" onclick="switchDay(event, 'day2')">Day 2: Tue Dec 15</button>
             <button class="tab-btn" onclick="switchDay(event, 'day3')">Day 3: Wed Dec 16</button>
-            <button class="tab-btn" onclick="switchDay(event, 'day4')">Day 2: Thur Dec 17</button>
+            <button class="tab-btn" onclick="switchDay(event, 'day4')">Day 4: Thur Dec 17</button>
         </div>
 
         <!-- DAY 1 CONTENT -->
         <div id="day1" class="agenda-day active">
             
             <!-- Item 1: Registration/Morning Coffee -->
-            <div class="agenda-item event-break">
-                <div class="agenda-time">08:30 – 09:15</div>
+            <div class="agenda-item">
+                <div class="agenda-time">08:45 – 09:30</div>
                 <div>
                     <h4 class="session-title">Registration & Morning Coffee</h4>
                     <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
@@ -743,91 +743,313 @@
             <div class="agenda-item">
                 <div class="agenda-time">09:30 – 10:30</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Talks</div>
-                    </div>
-                    </div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
                 </div>
             </div>
 
             <!-- Item 3: Coffee Break -->
-            <div class="agenda-item event-break">
-                <div class="agenda-time">10:30 – 11:00</div>
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">10:30 – 11:00</div>
                 <div>
                     <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
                 </div>
             </div>
 
+            <!-- Item 2: Active Session with Nested Talks -->
             <div class="agenda-item">
                 <div class="agenda-time">11:00 – 12:00</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Talks</div>
-                    </div>
-                    </div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
                 </div>
             </div>
 
+            <!-- Item 2: Active Session with Nested Talks -->
             <div class="agenda-item">
-                <div class="agenda-time">12:00 - 2:00 </div>
+                <div class="agenda-time lunch-break">12:00 – 2:00</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Lunch</div>
-                    </div>
-                    </div>
+                    <h4 class="session-title">Lunch</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
                 </div>
             </div>
 
+            <!-- Item 2: Active Session with Nested Talks -->
             <div class="agenda-item">
                 <div class="agenda-time">2:00 – 3:00</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Talks</div>
-                    </div>
-                    </div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
                 </div>
             </div>
 
-            <div class="agenda-item event-break">
-                <div class="agenda-time">3:00 – 3:30</div>
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">3:00 – 3:30</div>
                 <div>
                     <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
                 </div>
             </div>
 
-           <div class="agenda-item">
-                <div class="agenda-time">3:30 – 4:00</div>
+           <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">3:30 – 4:30</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Talks</div>
-                    </div>
-                    </div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
                 </div>
-            </div> 
-
+            </div>
+            
+            <!-- Item 2: Reception -->
+            <div class="agenda-item">
+                <div class="agenda-time social-event">6:30 – 8:30</div>
+                <div>
+                    <h4 class="session-title">Reception</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">TBA</p>
+                </div>
+            </div>
         </div>
 
+        
         <!-- DAY 2 CONTENT -->
         <div id="day2" class="agenda-day">
             
-            <!-- Item 1: Morning Session -->
+            <!-- Item 1: Morning Coffee -->
             <div class="agenda-item">
-                <div class="agenda-time">09:00 – 10:30</div>
+                <div class="agenda-time coffee-break">9:00 – 09:30</div>
                 <div>
-                    <div class="session-header">
-                        <div class="session-title">Session II: Direct Imaging & Atmospheres</div>
-                        <div class="session-chair">Chair: Jackie Faherty (AMNH)</div>
-                    </div>
-                    
-                    <div class="talk-list">
-                        <div class="talk-card">
-                            <div class="talk-title">JWST/NIRCam Characterization of Young Planetary-Mass Objects</div>
-                            <div class="talk-speaker">Presented by <strong>Alice Johnson</strong> (Space Telescope Science Institute)</div>
-                        </div>
-                    </div>
+                    <h4 class="session-title">Morning Coffee</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
                 </div>
             </div>
 
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">09:30 – 10:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">10:30 – 11:00</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">11:00 – 12:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time lunch-break">12:00 – 2:00</div>
+                <div>
+                    <h4 class="session-title">Lunch</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">2:00 – 3:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">3:00 – 3:30</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+           <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">3:30 – 4:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DAY 3 CONTENT -->
+        <div id="day3" class="agenda-day">
+            
+            <!-- Item 1: Registration/Morning Coffee -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">9:00 – 09:30</div>
+                <div>
+                    <h4 class="session-title">Morning Coffee</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">09:30 – 10:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">10:30 – 11:00</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">11:00 – 12:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time lunch-break">12:00 – 2:00</div>
+                <div>
+                    <h4 class="session-title">Lunch</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">2:00 – 3:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">3:00 – 3:30</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+           <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">3:30 – 4:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+            
+            <!-- Item 2: Reception -->
+            <div class="agenda-item">
+                <div class="agenda-time social-event">6:30 – 8:30</div>
+                <div>
+                    <h4 class="session-title">Conference Banquet</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">TBA</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 4 CONTENT -->
+        <div id="day4" class="agenda-day">
+            
+            <!-- Item 1: Registration/Morning Coffee -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">9:00 – 09:30</div>
+                <div>
+                    <h4 class="session-title"> Morning Coffee</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">09:30 – 10:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">10:30 – 11:00</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">11:00 – 12:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time lunch-break">12:00 – 2:00</div>
+                <div>
+                    <h4 class="session-title">Lunch</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">2:00 – 3:00</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Coffee Break -->
+            <div class="agenda-item">
+                <div class="agenda-time coffee-break">3:00 – 3:30</div>
+                <div>
+                    <h4 class="session-title">Coffee Break</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
+                </div>
+            </div>
+
+           <!-- Item 2: Active Session with Nested Talks -->
+            <div class="agenda-item">
+                <div class="agenda-time">3:30 – 4:30</div>
+                <div>
+                    <h4 class="session-title">Talks</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
+                </div>
+            </div>
+            
         </div>
 
     </div>
@@ -871,6 +1093,7 @@
             <h2>Venue & Logistics</h2>
             <p>The conference will take place in the <strong>Phillips Auditorium</strong> at the Center for Astrophysics | Harvard & Smithsonian in Cambridge, Massachusetts.</p>
             
+            <p>There will NOT be a remote option to attend the conference. However, if travel poses a significant barrier, please reach out to the LOC. </p>
             <div class="sequential-container">
                 
                 <div class="card">
