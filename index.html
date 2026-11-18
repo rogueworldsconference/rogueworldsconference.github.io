@@ -509,6 +509,38 @@
     height: 20px;
     fill: currentColor;
 }
+
+/* Updated detailed workshop agenda */
+.agenda-day-heading { color: #fff; font-size: 1.4rem; margin: 8px 0 18px; }
+.agenda-session {
+    margin-top: 28px; margin-bottom: 6px; padding: 14px 18px;
+    background: rgba(59, 130, 246, 0.08);
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 0 6px 6px 0;
+}
+.agenda-session .session-title { margin-bottom: 0; font-size: 1.15rem; }
+.agenda-talk { padding: 9px 0; align-items: start; }
+.agenda-talk .talk-card { border-left: 2px solid var(--primary-blue); }
+.agenda-talk .talk-speaker { margin-bottom: 4px; }
+.agenda-talk .talk-title { font-size: .98rem; font-weight: 500; margin-bottom: 0; }
+.invited-tag {
+    display: inline-block; padding: 2px 8px; margin-left: 10px;
+    border-radius: 12px; color: #fcd34d;
+    background: rgba(245, 158, 11, 0.12);
+    font-weight: 600; font-size: .75rem; vertical-align: middle;
+}
+.agenda-break {
+    padding: 12px 16px; margin: 8px 0; border-radius: 6px;
+    background: rgba(255,255,255,0.035);
+}
+.agenda-event-title { color: var(--text-color); font-size: 1rem; font-weight: 650; }
+.agenda-event-detail { margin: 3px 0 0; color: var(--text-muted); font-size: .88rem; }
+.tab-btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+@media (max-width: 768px) {
+    .agenda-talk { gap: 4px; }
+    .agenda-session { padding: 12px 14px; }
+    .agenda-break { gap: 3px; }
+}
     </style>
 </head>
 <body>
@@ -608,326 +640,271 @@
         </div>
     </section>
     
-    <section id="agenda">
+<section id="agenda">
     <div class="container">
-        <h2>Tentative Workshop Agenda</h2>
-        <p>The tentative schedule for Rogue Worlds 3. Exact times are subject to change. Click the tabs below to view each day's sessions.</p>
-
-        <!-- Day Toggles -->
-        <div class="agenda-tabs">
-            <button class="tab-btn active" onclick="switchDay(event, 'day1')">Day 1: Mon Dec 14</button>
-            <button class="tab-btn" onclick="switchDay(event, 'day2')">Day 2: Tue Dec 15</button>
-            <button class="tab-btn" onclick="switchDay(event, 'day3')">Day 3: Wed Dec 16</button>
-            <button class="tab-btn" onclick="switchDay(event, 'day4')">Day 4: Thur Dec 17</button>
+        <h2>Workshop Agenda</h2>
+        <p>The detailed Rogue Worlds 3 program for December 14–17, 2026.
+        All times are local to Cambridge, Massachusetts, and shown in 24-hour format.
+        Select a day to view its sessions and presentations.</p>
+        <div class="agenda-tabs" role="tablist" aria-label="Conference schedule by day">
+            <button type="button" role="tab" class="tab-btn active"
+        id="agenda-tab-day1" aria-controls="day1"
+        aria-selected="true" tabindex="0"
+        onclick="switchDay(event, 'day1')">Day 1: Mon Dec 14</button><button type="button" role="tab" class="tab-btn"
+        id="agenda-tab-day2" aria-controls="day2"
+        aria-selected="false" tabindex="-1"
+        onclick="switchDay(event, 'day2')">Day 2: Tue Dec 15</button><button type="button" role="tab" class="tab-btn"
+        id="agenda-tab-day3" aria-controls="day3"
+        aria-selected="false" tabindex="-1"
+        onclick="switchDay(event, 'day3')">Day 3: Wed Dec 16</button><button type="button" role="tab" class="tab-btn"
+        id="agenda-tab-day4" aria-controls="day4"
+        aria-selected="false" tabindex="-1"
+        onclick="switchDay(event, 'day4')">Day 4: Thu Dec 17</button>
         </div>
-
-        <!-- DAY 1 CONTENT -->
-        <div id="day1" class="agenda-day active">
-            
-            <!-- Item 1: Registration/Morning Coffee -->
-            <div class="agenda-item">
-                <div class="agenda-time">08:45 – 09:30</div>
-                <div>
-                    <h4 class="session-title">Registration & Morning Coffee</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">09:30 – 10:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">10:30 – 11:00</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">11:00 – 12:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time lunch-break">12:00 – 2:00</div>
-                <div>
-                    <h4 class="session-title">Lunch</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">2:00 – 3:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">3:00 – 3:30</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-           <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">3:30 – 4:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-            
-            <!-- Item 2: Reception -->
-            <div class="agenda-item">
-                <div class="agenda-time social-event">6:30 – 8:30</div>
-                <div>
-                    <h4 class="session-title">Reception</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">TBA</p>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- DAY 2 CONTENT -->
-        <div id="day2" class="agenda-day">
-            
-            <!-- Item 1: Morning Coffee -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">9:00 – 09:30</div>
-                <div>
-                    <h4 class="session-title">Morning Coffee</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">09:30 – 10:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">10:30 – 11:00</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">11:00 – 12:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time lunch-break">12:00 – 2:00</div>
-                <div>
-                    <h4 class="session-title">Lunch</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">2:00 – 3:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">3:00 – 3:30</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-           <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">3:30 – 4:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- DAY 3 CONTENT -->
-        <div id="day3" class="agenda-day">
-            
-            <!-- Item 1: Registration/Morning Coffee -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">9:00 – 09:30</div>
-                <div>
-                    <h4 class="session-title">Morning Coffee</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">09:30 – 10:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">10:30 – 11:00</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">11:00 – 12:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time lunch-break">12:00 – 2:00</div>
-                <div>
-                    <h4 class="session-title">Lunch</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">2:00 – 3:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">3:00 – 3:30</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-           <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">3:30 – 4:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-            
-            <!-- Item 2: Reception -->
-            <div class="agenda-item">
-                <div class="agenda-time social-event">6:30 – 8:30</div>
-                <div>
-                    <h4 class="session-title">Conference Banquet</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">TBA</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- DAY 4 CONTENT -->
-        <div id="day4" class="agenda-day">
-            
-            <!-- Item 1: Registration/Morning Coffee -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">9:00 – 09:30</div>
-                <div>
-                    <h4 class="session-title"> Morning Coffee</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">09:30 – 10:30</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Coffee Break -->
-            <div class="agenda-item">
-                <div class="agenda-time coffee-break">10:30 – 11:00</div>
-                <div>
-                    <h4 class="session-title">Coffee Break</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium Lobby</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">11:00 – 12:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time lunch-break">12:00 – 2:00</div>
-                <div>
-                    <h4 class="session-title">Lunch</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">On your own</p>
-                </div>
-            </div>
-
-            <!-- Item 2: Active Session with Nested Talks -->
-            <div class="agenda-item">
-                <div class="agenda-time">2:00 – 3:00</div>
-                <div>
-                    <h4 class="session-title">Talks</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Phillips Auditorium</p>
-                </div>
-            </div>
-
-        </div>
-
+        <div id="day1" class="agenda-day active" role="tabpanel"
+          aria-labelledby="agenda-tab-day1">
+          <h3 class="agenda-day-heading">New Opportunities</h3>
+<div class="agenda-session"><h4 class="session-title">Session 1 — Roman and emerging microlensing surveys</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:00–09:10</div>
+            <div class="talk-card"><div class="talk-speaker"><strong>Welcome</strong></div>
+            <div class="talk-title">Local Organizing Committee</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:10–09:40</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Rachel Street</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Roman Space Telescope</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:40–09:57</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Scott Gaudi</strong></div>
+        <div class="talk-title">The Roman Galactic Exoplanet Survey</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:57–10:14</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Christopher Lam</strong></div>
+        <div class="talk-title">From FFP Detections to FFP Occurrence Rates</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:14–10:31</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Efstathia Natalia Rektsini</strong></div>
+        <div class="talk-title">Looking for the Missing Host: Testing Free-Floating Planet Candidates with Euclid and Ephsta</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:31–10:48</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>William DeRocco</strong></div>
+        <div class="talk-title">Roman’s Rogues: What Roman’s Discoveries Will Teach Us About Lonely Worlds and the Systems They Leave Behind</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">10:48–11:08</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">20 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:08–11:25</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Kansuke Nunota</strong></div>
+        <div class="talk-title">Measuring Free-Floating Planet Masses with Roman and Subaru</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:25–11:42</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Shannon Fitton</strong></div>
+        <div class="talk-title">Detecting Microlensing Events with the Argus Array</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:42–11:59</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Mallory Harris</strong></div>
+        <div class="talk-title">Gaia23bra b: Characterizing TESS’s First Bound Microlensing Planet with High-Cadence Photometry</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time lunch-break">12:00–14:00</div>
+        <div><h4 class="agenda-event-title">Lunch</h4><p class="agenda-event-detail">On your own</p></div>
+    </div>
+<div class="agenda-session"><h4 class="session-title">Session 2 — Moons orbiting rogue worlds</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:00–14:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Mary Anne Limbach</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Moons and satellites around rogue worlds</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:30–14:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Mikayla Wilson</strong></div>
+        <div class="talk-title">Discovery of Candidate Exomoons Around Super Jupiter STORM 58</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:47–15:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Brooke Kotten</strong></div>
+        <div class="talk-title">Candidate Transiting Companions to Young Substellar Worlds in the Orion Nebula Cluster</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:04–15:21</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Rachel Bowens-Rubin</strong></div>
+        <div class="talk-title">The “World’s Smorgasbord” Classification Tool</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">15:21–15:56</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">35 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:56–16:13</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>James Rogers</strong></div>
+        <div class="talk-title">Survival of Free-Floating Exoplanet and Exomoon Atmospheres Exposed to External Photoevaporation and Supernovae in the Orion Nebula Cluster</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:13–16:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>David Dahlbüdding</strong></div>
+        <div class="talk-title">Insulating the Isolated: How Collision-Induced Absorption Keeps Rogue Moons Warm</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:30–16:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Sydney Battles</strong></div>
+        <div class="talk-title">Can Moons Survive Planet Ejection? Stability, Resonances, and Tidal Heating of Moons Around Free-Floating Planets</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:47–17:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Ruizhe Wang</strong></div>
+        <div class="talk-title">Connecting Atmospheric Variability and Exomoon Searches Around Rogue Planets</div></div></div>
+</div><div id="day2" class="agenda-day" role="tabpanel"
+          aria-labelledby="agenda-tab-day2">
+          <h3 class="agenda-day-heading">Observations of Rogue Worlds</h3>
+<div class="agenda-session"><h4 class="session-title">Session 3 — Microlensing candidates: hosts, false positives, and lensing signatures</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:00–09:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Farzaneh Zohrabi</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Microlensing observations</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:30–09:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>David Bennett</strong></div>
+        <div class="talk-title">Challenges for the Exclusion of the Wide Orbit Interpretation of FFPs</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:47–10:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Keming Zhang</strong></div>
+        <div class="talk-title">Stellar Hosts Confirmed for Microlensing FFP Candidates</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">10:04–10:39</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">35 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:39–10:56</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Elisabeth Newton</strong></div>
+        <div class="talk-title">M Dwarf Stellar Flares as Free-Floating Planet False Positives</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:56–11:13</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Elizabeth Bailey</strong></div>
+        <div class="talk-title">Occultation by Disks Around Free-Floating Planets: Microlensing Signatures and Survey Selection</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:13–11:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Jon Hulberg</strong></div>
+        <div class="talk-title">To FFP or Not to FFP: Short Duration Planetary Microlensing Events in the Roman GBTDS</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:30–11:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Zara Sayed</strong></div>
+        <div class="talk-title">The Galactic Dynamics of Free-Floating Planets: From Ejection Kicks to Microlensing</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time lunch-break">12:00–14:00</div>
+        <div><h4 class="agenda-event-title">Lunch</h4><p class="agenda-event-detail">On your own</p></div>
+    </div>
+<div class="agenda-session"><h4 class="session-title">Session 4 — Direct imaging and atmospheric characterization</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:00–14:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Koraljka Muzic</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Direct imaging of rogue worlds</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:30–14:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Azul Ruiz Diaz</strong></div>
+        <div class="talk-title">Uncovering Young Free-Floating Planetary-Mass Objects with Citizen Science and SPHEREx</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:47–15:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Caprice Phillips</strong></div>
+        <div class="talk-title">Rogue Twins: Same Age, Same Mass, Different Weather?</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:04–15:21</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>William Meynardie</strong></div>
+        <div class="talk-title">Searching for Ejected Planets with Atmospheric Retrievals</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">15:21–15:56</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">35 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:56–16:13</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Allison McCarthy</strong></div>
+        <div class="talk-title">Storms are Brewing in Orion: A First Look at Variability Results from a Sample of Young Substellar Worlds</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:13–16:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Maggie Ju</strong></div>
+        <div class="talk-title">JWST/NIRCam Detection of a Flaring Planetary-Mass Object in the Orion Nebula Cluster</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:30–16:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Tiger Lu</strong></div>
+        <div class="talk-title">The Architecture of the 14 Herculis System Suggests Primordial Ejection of a Massive Planet</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:47–17:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Aina Palau</strong></div>
+        <div class="talk-title">Brown Dwarf and Free-Floating Planet Formation in the New Generation ALMA and VLA Era</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">17:04–17:21</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Eric Gaidos</strong></div>
+        <div class="talk-title">Going Rogue: Planets Taking a Spin with the Pedal to the Metal</div></div></div>
+</div><div id="day3" class="agenda-day" role="tabpanel"
+          aria-labelledby="agenda-tab-day3">
+          <h3 class="agenda-day-heading">Making Rogue Worlds</h3>
+<div class="agenda-session"><h4 class="session-title">Session 5 — Formation pathways, disks, and accretion</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:00–09:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Remo Burn</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Planet formation and ejection</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:30–09:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Jeremy Smallwood</strong></div>
+        <div class="talk-title">Born Free or Kicked Out? Using Disks and Dust to Trace the Origin of Free-Floating Planets</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:47–10:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Lillian Jiang</strong></div>
+        <div class="talk-title">Going Rogue? Accretion from Wide-Orbit Planets and Free-Floating Worlds with HST</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:04–10:21</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Claire Finley</strong></div>
+        <div class="talk-title">A SPHEREx View of the Diverse Disks Around Free-Floating Planetary-Mass Objects</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">10:21–10:51</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">30 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:51–11:08</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Laura Flagg</strong></div>
+        <div class="talk-title">Forming Rogue Worlds: What We Can Learn from an Actively Accreting Object with an Unusual Disk</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:08–11:25</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Matson Garza</strong></div>
+        <div class="talk-title">Storms are Brewing in Orion: Substellar Dipper Candidates</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:25–11:42</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Sierra Grant</strong></div>
+        <div class="talk-title">JWST’s View of Disks Around Planetary-Mass Objects</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:42–11:59</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Matthew De Furio</strong></div>
+        <div class="talk-title">Towards the Low-Mass Limit of Fragmentation: A JWST Investigation of the IMF in NGC 2024</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time lunch-break">12:00–14:00</div>
+        <div><h4 class="agenda-event-title">Lunch</h4><p class="agenda-event-detail">On your own</p></div>
+    </div>
+<div class="agenda-session"><h4 class="session-title">Session 6 — Ejection mechanisms and planetary-system dynamics</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:00–14:30</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Cristobal Petrovich</strong><span class="invited-tag">Invited Talk</span></div>
+        <div class="talk-title">Dynamics of planetary ejection</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:30–14:47</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Alexander P. Stephan</strong></div>
+        <div class="talk-title">Contribution of White Dwarf Formation Kicks to the Free-Floating Planet Population</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">14:47–15:04</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Francesco Flammini Dotti</strong></div>
+        <div class="talk-title">Free-Floating Objects in Star Clusters: Dynamical Evolution and Expectations on Their Quantity in the Field</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:04–15:21</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Tim Hallatt</strong></div>
+        <div class="talk-title">Shaving the Outskirts of Planetary Systems Probed by Roman via Stellar Flybys</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">15:21–15:41</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">20 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:41–15:58</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Teddy Walsh</strong></div>
+        <div class="talk-title">Formation and Distribution of Free-Floating Planets from Polar Circumbinary Systems</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">15:58–16:15</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Leila Honarbakhsh</strong></div>
+        <div class="talk-title">The Impact of Giant Planet Growth on the Population of Interstellar Objects</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">16:15–16:32</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Nader Haghighipour</strong></div>
+        <div class="talk-title">Implications of Planet Migration for the Origin, Mass, and Population of Free-Floating Planets and Interstellar Objects</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time social-event">Time TBA</div>
+        <div><h4 class="agenda-event-title">Conference Banquet</h4><p class="agenda-event-detail">MIT Museum</p></div>
+    </div>
+</div><div id="day4" class="agenda-day" role="tabpanel"
+          aria-labelledby="agenda-tab-day4">
+          <h3 class="agenda-day-heading">Potpourri</h3>
+<div class="agenda-session"><h4 class="session-title">Session 7 — Galactic environments, population demographics, and cross-population clues</h4></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:00–09:17</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Bryce Bolin</strong></div>
+        <div class="talk-title">A Planet Formation Synthesis of Interstellar Objects, Extrasolar Systems, and Solar System Bodies</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:17–09:34</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Sheila Sagear</strong></div>
+        <div class="talk-title">The Orbital Dynamics of Small Stars and their Exoplanets</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">09:34–09:51</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Hayden Monk</strong></div>
+        <div class="talk-title">The Production of Interstellar Bodies Through Planetary Close-Encounter Scattering: Ejection Efficiency and Galactic Abundance</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time coffee-break">09:51–10:18</div>
+        <div><h4 class="agenda-event-title">Coffee Break</h4><p class="agenda-event-detail">27 min</p></div>
+    </div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:18–10:35</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Vighnesh Nagpal</strong></div>
+        <div class="talk-title">Swept by the Galactic Tide: The Fates of Giant Planets in Wide Binaries</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:35–10:52</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Ritika Sethi</strong></div>
+        <div class="talk-title">Hot-Jupiter Formation in the Galactic Bulge</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">10:52–11:09</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Michael R. Meyer</strong></div>
+        <div class="talk-title">They Might Be Giants (but probably not): Only Small Planets Go Rogue</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:09–11:26</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Arthur Adams</strong></div>
+        <div class="talk-title">HD 106906 b: Not Quite a Rogue, Perhaps a Rebellious Teenager</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:26–11:43</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Daniella C. Bardalez Gagliuffi</strong></div>
+        <div class="talk-title">14 Herculis and the One That Got Away</div></div></div>
+<div class="agenda-item agenda-talk"><div class="agenda-time">11:43–12:00</div>
+        <div class="talk-card"><div class="talk-speaker"><strong>Andrew Powell</strong></div>
+        <div class="talk-title">Rogue Planets, Interstellar Objects and Machine Learning: Predicting the Fate of Ejected Objects During the Growth of Gas Giant Planets</div></div></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time lunch-break">12:00–14:00</div>
+        <div><h4 class="agenda-event-title">Lunch</h4><p class="agenda-event-detail">On your own</p></div>
+    </div>
+<div class="agenda-session"><h4 class="session-title">Session 8 — Roman Rally Hackathon</h4></div>
+<div class="agenda-item agenda-break">
+        <div class="agenda-time social-event">14:00 onward</div>
+        <div><h4 class="agenda-event-title">Roman Rally Hackathon</h4></div>
+    </div>
+</div>
     </div>
 </section>
 
@@ -1153,11 +1130,17 @@
 
         // Deactivate all tab buttons
         const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+            btn.tabIndex = -1;
+        });
 
         // Show the chosen day and highlight its button
         document.getElementById(dayId).classList.add('active');
         event.currentTarget.classList.add('active');
+        event.currentTarget.setAttribute('aria-selected', 'true');
+        event.currentTarget.tabIndex = 0;
     }
 </script>
     
